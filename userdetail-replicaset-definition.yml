@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+    name: userdetail-replicaset
+    labels:
+        app: userdetail-app
+        name: userdetail-app
+spec:
+    template:
+        metadata:
+            name: userdetail-pod
+            labels:
+                app: userdetail-app
+                name: userdetail-app
+        spec:
+            containers:
+                - name: userdetail-container
+                  image: ashishyete/user-detail:v1
+    replicas: 2
+    selector:
+        matchLabels:
+            app: userdetail-app
+            name: userdetail-app

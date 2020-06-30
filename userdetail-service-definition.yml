@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: userdetail-service
+    labels:
+        name: userdetail-app
+        app: userdetail-app
+spec:
+    type: LoadBalancer
+    ports:
+        - targetPort: 9910
+          port: 9910
+    selector:
+          name: userdetail-app
+          app: userdetail-app

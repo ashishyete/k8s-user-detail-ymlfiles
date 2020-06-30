@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: userdetail-pod
+    labels:
+        app: userdetail-app
+        name: userdetail-app
+spec:
+    containers:
+        - name: userdetail-container
+          image: ashishyete/user-detail:v1
